@@ -29,6 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-1090803132810319"
+        />
         <Script
           strategy="lazyOnload"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
@@ -36,17 +40,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Banner superior */}
         <header className="sticky top-0 z-50">
           <div className="container mx-auto px-4 py-2">
             <AdUnit slotId="SEU_SLOT_ID_HEADER" />
           </div>
         </header>
-
-        {/* Conteúdo principal */}
         <main className="container mx-auto px-4 py-8">{children}</main>
-
-        {/* Footer com anúncio */}
         <footer className="border-t">
           <div className="container mx-auto px-4 py-8">
             <AdUnit slotId="SEU_SLOT_ID_FOOTER" />
