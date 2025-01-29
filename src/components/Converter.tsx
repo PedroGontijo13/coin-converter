@@ -40,6 +40,12 @@ const Converter = () => {
         e.preventDefault();
         const rate = rates[targetCurrency];
         setConvertedAmount(Number((Number(amount) * rate).toFixed(2)));
+        window.gtag('event', 'currency_conversion', {
+            from_currency: baseCurrency,
+            to_currency: targetCurrency,
+            amount: amount,
+            converted_amount: convertedAmount
+        });
     };
 
     if (loading) return <div>Loading...</div>;

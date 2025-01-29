@@ -29,13 +29,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
-          name="google-adsense-account"
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-DTXECVXZT7`}
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DTXECVXZT7');
+          `}
+        </Script>
+
+        {/* Google AdSense */}
+        <meta 
+          name="google-adsense-account" 
           content="ca-pub-1090803132810319"
         />
         <Script
-          strategy="beforeInteractive"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+          strategy="lazyOnload"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1090803132810319`}
           crossOrigin="anonymous"
         />
       </head>
