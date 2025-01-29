@@ -34,7 +34,7 @@ export default function RootLayout({
           content="ca-pub-1090803132810319"
         />
         <Script
-          strategy="lazyOnload"
+          strategy="beforeInteractive"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
           crossOrigin="anonymous"
         />
