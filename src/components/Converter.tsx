@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
 
@@ -27,7 +27,7 @@ const Converter = () => {
                 setRates(response.data.conversion_rates);
                 setError('');
             } catch (err) {
-                setError('Failed to fetch exchange rates');
+                setError('Failed to fetch exchange rates:' + err);
             } finally {
                 setLoading(false);
             }
@@ -36,7 +36,7 @@ const Converter = () => {
         fetchRates();
     }, [baseCurrency, API_KEY]);
 
-    const handleConvert = (e: any) => {
+    const handleConvert = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const rate = rates[targetCurrency];
         setConvertedAmount(Number((Number(amount) * rate).toFixed(2)));

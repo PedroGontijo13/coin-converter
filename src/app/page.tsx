@@ -1,9 +1,19 @@
-import Converter from '../components/Converter';
+// app/page.tsx
+import Converter from '@/components/Converter';
+import { AdUnit } from '@/components/AdUnit';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <>
+      <div className="mb-8">
+        <AdUnit slotId="SEU_SLOT_ID_CONTENT_TOP" />
+      </div>
+      
       <Converter />
-    </div>
+
+      <div className="mt-8">
+        <AdUnit slotId="SEU_SLOT_ID_CONTENT_BOTTOM" />
+      </div>
+    </>
   );
 }
