@@ -48,6 +48,12 @@ const Converter = () => {
         });
     };
 
+    const handleOnclick = () => {
+        setBaseCurrency(targetCurrency)
+        setTargetCurrency(baseCurrency)
+        setConvertedAmount(0)
+    }
+
     if (loading) return <div>Loading...</div>;
 
     return (
@@ -84,7 +90,9 @@ const Converter = () => {
                             ))}
                         </select>
                     </div>
-
+                    <div onClick={handleOnclick} className='flex justify-center items-center py-10 px-2'>
+                        <ArrowPathIcon className="h-5 w-5" />
+                    </div>
                     <div className="flex-1">
                         <label className="block mb-2">To</label>
                         <select
