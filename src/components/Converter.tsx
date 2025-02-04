@@ -57,7 +57,7 @@ const Converter = () => {
     if (loading) return <div>Loading...</div>;
 
     return (
-        <div className="max-w-md mx-auto p-6 text-black bg-white rounded-lg shadow-md">
+        <div tabIndex={-1} className="max-w-md mx-auto p-6 text-black bg-white rounded-lg shadow-md">
             <h1 className="text-2xl font-bold mb-4">Currency Converter</h1>
 
             {error && <p className="text-red-500 mb-4">{error}</p>}
