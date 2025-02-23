@@ -10,7 +10,7 @@ type ExchangeRates = {
 const Converter = () => {
     const [amount, setAmount] = useState(1);
     const [baseCurrency, setBaseCurrency] = useState('USD');
-    const [targetCurrency, setTargetCurrency] = useState('EUR');
+    const [targetCurrency, setTargetCurrency] = useState('BRL');
     const [rates, setRates] = useState<ExchangeRates>({});
     const [convertedAmount, setConvertedAmount] = useState(0);
     const [loading, setLoading] = useState(true);
